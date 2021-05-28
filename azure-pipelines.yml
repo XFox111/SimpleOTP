@@ -33,13 +33,6 @@ steps:
     configuration: '$(buildConfiguration)'
     msbuildArchitecture: 'x64'
 
-- task: CopyFiles@2
-  displayName: 'Copy file to staging'
-  inputs:
-    SourceFolder: '$(System.DefaultWorkingDirectory)'
-    Contents: '**/**'
-    TargetFolder: '$(Build.ArifactStagingDirectory)'
-
 - task: VSBuild@1
   displayName: 'Build tests'
   inputs:
@@ -56,6 +49,13 @@ steps:
       !**\bin\**\ref\**
     searchFolder: '$(System.DefaultWorkingDirectory)'
     codeCoverageEnabled: true
+
+- task: CopyFiles@2
+  displayName: 'Copy file to staging'
+  inputs:
+    SourceFolder: '$(System.DefaultWorkingDirectory)'
+    Contents: '**/**'
+    TargetFolder: '$(Build.ArifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Drop artifacts'
