@@ -91,6 +91,6 @@ If you are interested in fixing issues and contributing directly to the code bas
 This project has adopted the Contributor Covenant. For more information see the [Code of Conduct](https://github.com/XFox111/SimpleOTP/blob/master/CODE_OF_CONDUCT.md)
 
 ## Copyrights
-> ©2021 Michael "XFox" Gordeev
+> ©2021 Eugene Fox
 
 Licensed under [MIT License](https://opensource.org/licenses/MIT)
