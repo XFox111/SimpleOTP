@@ -28,7 +28,7 @@ steps:
   displayName: 'Build library'
   inputs:
     solution: '**/SimpleOTP.csproj'
-    msbuildArgs: '/p:NoWarn=AD0001 /p:OutDir=$(Build.ArtifactStagingDirectory)'
+    msbuildArgs: '/p:NoWarn=AD0001'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
     msbuildArchitecture: 'x64'
@@ -36,7 +36,8 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy file to staging'
   inputs:
-    Contents: '$(System.DefaultWorkingDirectory)'
+    SourceFolder: '$(System.DefaultWorkingDirectory)'
+    Contents: '**/**'
     TargetFolder: '$(Build.ArifactStagingDirectory)'
 
 - task: VSBuild@1
