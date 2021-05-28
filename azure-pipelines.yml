@@ -37,7 +37,7 @@ steps:
   inputs:
     SourceFolder: '$(System.DefaultWorkingDirectory)'
     Contents: '**/**.nupkg'
-    TargetFolder: '$(Build.ArifactStagingDirectory)'
+    TargetFolder: '$(Build.ArifactStagingDirectory)/SimpleOTP.nupkg'
 
 - task: VSBuild@1
   displayName: 'Build tests'
@@ -52,11 +52,18 @@ steps:
       **\*.Tests.dll
       !**\*TestAdapter.dll
       !**\obj\**
+      !**\bin\**\ref\**
     searchFolder: '$(System.DefaultWorkingDirectory)'
+    codeCoverageEnabled: true
+
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: 'JaCoCo'
+    summaryFileLocation: '**/**.coverage'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Drop artifacts'
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/SimpleOTP.nupkg'
+    ArtifactName: 'NuGetPackage.nupkg'
     publishLocation: 'Container'
