@@ -1,5 +1,6 @@
 # SimpleOTP
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/xfox111/SimpleOTP)](https://github.com/xfox111/SimpleOTP/releases/latest)
+![Nuget](https://img.shields.io/nuget/v/SimpleOTP)
+![Nuget](https://img.shields.io/nuget/dt/SimpleOTP)
 
 [![GitHub issues](https://img.shields.io/github/issues/xfox111/SimpleOTP)](https://github.com/xfox111/SimpleOTP/issues)
 [![GitHub last commit](https://img.shields.io/github/last-commit/xfox111/SimpleOTP)](https://github.com/xfox111/SimpleOTP/commits/master)
@@ -26,6 +27,7 @@
 ##### By Mateusz Adamowski, taken with Canon EOS. - Own work, CC BY-SA 1.0, https://commons.wikimedia.org/w/index.php?curid=142232
 
 ## Usage
+See more documentation at [project's wiki](https://github.com/xfox111/SimpleOTP/wiki)
 ### Generate code
 ```csharp
 string sample_config_uri = "otpauth://totp/FoxDev%20Studio:eugene@xfox111.net?secret=ESQVTYRM2CWZC3NX24GRRWIAUUWVHWQH&issuer=FoxDev%20Studio";
@@ -72,6 +74,10 @@ factory.Dispose();
 ## Download
 - [NuGet Gallery](https://www.nuget.org/packages/SimpleOTP)
 - [GitHub Releases](https://github.com/xfox111/SimpleOTP/releases/latest)
+
+## CI/DC status
+[![Build Status](https://dev.azure.com/xfox111/GitHub%20CI/_apis/build/status/XFox111.SimpleOTP?branchName=master)](https://dev.azure.com/xfox111/GitHub%20CI/_build/latest?definitionId=13&branchName=master)
+![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/xfox111/GitHub%2520CI/13)
 
 ## Contributing
 There are many ways in which you can participate in the project, for example:
