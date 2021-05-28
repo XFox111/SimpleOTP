@@ -28,6 +28,7 @@ steps:
   displayName: 'Build library'
   inputs:
     solution: '**/SimpleOTP.csproj'
+    msbuildArgs: '/p:NoWarn=AD0001 /p:OutDir=$(Build.ArtifactStagingDirectory)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
     msbuildArchitecture: 'x64'
@@ -35,8 +36,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy file to staging'
   inputs:
-    SourceFolder: '$(System.DefaultWorkingDirectory)'
-    Contents: '/'
+    Contents: '$(System.DefaultWorkingDirectory)'
     TargetFolder: '$(Build.ArifactStagingDirectory)'
 
 - task: VSBuild@1
@@ -56,14 +56,9 @@ steps:
     searchFolder: '$(System.DefaultWorkingDirectory)'
     codeCoverageEnabled: true
 
-# - task: PublishCodeCoverageResults@1
-#   inputs:
-#     codeCoverageTool: 'JaCoCo'
-#     summaryFileLocation: '**/**.coverage'
-
 - task: PublishBuildArtifacts@1
   displayName: 'Drop artifacts'
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/SimpleOTP.nupkg'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'Artifacts'
     publishLocation: 'Container'
