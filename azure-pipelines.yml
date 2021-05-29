@@ -4,7 +4,7 @@ trigger:
     - master
   paths:
     include:
-    - CHANGELOG.md
+    - SimpleOTP/**
 
 pool:
   vmImage: 'windows-latest'
@@ -50,8 +50,17 @@ steps:
     searchFolder: '$(System.DefaultWorkingDirectory)'
     codeCoverageEnabled: true
 
+- task: PowerShell@2
+  displayName: 'Copy changelog'
+  inputs:
+    targetType: 'inline'
+    script: |
+      New-Item $(Build.ArtifactStagingDirectory)\Changelog.md
+      (Select-Xml -Path SimpleOTP.csproj -XPath /Project/PropertyGroup/PackageReleaseNotes | Select-Object -ExpandProperty Node).InnerText | Set-Content $(Build.ArtifactStagingDirectory)\changelog.md -Encoding UTF8
+    workingDirectory: '$(Build.SourcesDirectory)\SimpleOTP'
+
 - task: CopyFiles@2
-  displayName: 'Copy file to staging'
+  displayName: 'Copy package to staging'
   inputs:
     SourceFolder: '$(System.DefaultWorkingDirectory)'
     Contents: '**/Release/**/*.nupkg'
