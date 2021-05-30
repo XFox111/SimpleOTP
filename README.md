@@ -74,6 +74,8 @@ factory.Dispose();
 
 ## CI/DC status
 [![Build Status](https://dev.azure.com/xfox111/GitHub%20CI/_apis/build/status/XFox111.SimpleOTP?branchName=master)](https://dev.azure.com/xfox111/GitHub%20CI/_build/latest?definitionId=13)
+![Deployment status](https://vsrm.dev.azure.com/xfox111/_apis/public/Release/badge/e42c572c-a3cd-4aac-bbb1-f720d9ccb5ea/3/15)
+
 ![Azure DevOps tests](https://img.shields.io/azure-devops/tests/xfox111/GitHub%2520CI/13?label=Tests)
 ![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/xfox111/GitHub%2520CI/13?label=Code+coverage)
 

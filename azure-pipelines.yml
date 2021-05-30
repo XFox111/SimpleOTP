@@ -5,6 +5,8 @@ trigger:
   paths:
     include:
     - SimpleOTP/**
+    - SimpleOTP.Test/**
+    - SimpleOTP.sln
 
 pool:
   vmImage: 'windows-latest'
