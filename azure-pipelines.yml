@@ -1,12 +1,5 @@
 trigger:
-  branches:
-    include:
-    - master
-  paths:
-    include:
-    - SimpleOTP/**
-    - SimpleOTP.Test/**
-    - SimpleOTP.sln
+- master
 
 pool:
   vmImage: 'windows-latest'
