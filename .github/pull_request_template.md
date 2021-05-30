@@ -6,6 +6,5 @@ Fixes:
 - Item 3
 
 ## PR Checklist
-- [ ] Update package version
-- [ ] Update CHANGELOG.md
+- [ ] Update package version and release notes
 - [ ] Tests and documentation
