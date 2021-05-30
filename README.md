@@ -36,7 +36,7 @@ OTPCode code = OTPService.GenerateCode(ref config);
 ### Validate code
 ```csharp
 int codeToValidate = 350386;
-bool isValid = OTPService.ValidateCode(codeToValidate, config, TimeSpan.FromSeconds(30)); // True
+bool isValid = OTPService.ValidateTotp(codeToValidate, config, TimeSpan.FromSeconds(30)); // True
 ```
 
 ### Generate setup config

@@ -66,13 +66,15 @@ namespace SimpleOTP.Test
 				OTPService.GenerateCode(ref totpConfig, DateTime.UtcNow.AddSeconds(15)).Code,
 				OTPService.GenerateCode(ref totpConfig, DateTime.UtcNow.AddSeconds(45)).Code,
 			};
-			Assert.IsFalse(OTPService.ValidateCode(codes[0], totpConfig));
-			Assert.IsTrue(OTPService.ValidateCode(codes[1], totpConfig));
-			Assert.IsTrue(OTPService.ValidateCode(codes[2], totpConfig));
-			Assert.IsTrue(OTPService.ValidateCode(codes[3], totpConfig));
-			Assert.IsFalse(OTPService.ValidateCode(codes[4], totpConfig));
+			Assert.IsFalse(OTPService.ValidateTotp(codes[0], totpConfig));
+			Assert.IsTrue(OTPService.ValidateTotp(codes[1], totpConfig));
+			Assert.IsTrue(OTPService.ValidateTotp(codes[2], totpConfig));
+			Assert.IsTrue(OTPService.ValidateTotp(codes[3], totpConfig));
+			Assert.IsFalse(OTPService.ValidateTotp(codes[4], totpConfig));
 
-			Assert.IsTrue(OTPService.ValidateCode(codes[0], totpConfig, TimeSpan.FromSeconds(60)));
+			Assert.IsTrue(OTPService.ValidateTotp(codes[0], totpConfig, TimeSpan.FromSeconds(60)));
+
+			Assert.ThrowsException<ArgumentException>(() => OTPService.ValidateTotp(0, hotpConfig));
 		}
 
 		/// <summary>
@@ -92,19 +94,21 @@ namespace SimpleOTP.Test
 			};
 
 			hotpConfig.Counter = 10002;
-			Assert.IsFalse(OTPService.ValidateCode(codes[0], ref hotpConfig, 1, true));
+			Assert.IsFalse(OTPService.ValidateHotp(codes[0], ref hotpConfig, 1, true));
 			Assert.AreEqual(10002, hotpConfig.Counter);
-			Assert.IsTrue(OTPService.ValidateCode(codes[1], ref hotpConfig, 1, true));
+			Assert.IsTrue(OTPService.ValidateHotp(codes[1], ref hotpConfig, 1, true));
 			Assert.AreEqual(10001, hotpConfig.Counter);
 			hotpConfig.Counter = 10002;
-			Assert.IsTrue(OTPService.ValidateCode(codes[2], ref hotpConfig, 1, true));
+			Assert.IsTrue(OTPService.ValidateHotp(codes[2], ref hotpConfig, 1, true));
 			Assert.AreEqual(10002, hotpConfig.Counter);
 			hotpConfig.Counter = 10002;
-			Assert.IsTrue(OTPService.ValidateCode(codes[3], ref hotpConfig, 1, true));
+			Assert.IsTrue(OTPService.ValidateHotp(codes[3], ref hotpConfig, 1, true));
 			Assert.AreEqual(10003, hotpConfig.Counter);
 			hotpConfig.Counter = 10002;
-			Assert.IsFalse(OTPService.ValidateCode(codes[4], ref hotpConfig, 1, true));
+			Assert.IsFalse(OTPService.ValidateHotp(codes[4], ref hotpConfig, 1, true));
 			Assert.AreEqual(10002, hotpConfig.Counter);
+
+			Assert.ThrowsException<ArgumentException>(() => OTPService.ValidateHotp(0, ref totpConfig, 1, true));
 		}
 	}
 }

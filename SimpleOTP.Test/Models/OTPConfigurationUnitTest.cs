@@ -26,7 +26,8 @@ namespace SimpleOTP.Test.Models
 		public void TestShortLinkGenerator()
 		{
 			OTPConfiguration config = OTPConfiguration.GenerateConfiguration("FoxDev Studio", "eugene@xfox111.net");
-			System.Diagnostics.Debug.WriteLine(config.Id);
+			var testId = config.Id;
+			System.Diagnostics.Debug.WriteLine(testId);
 			Uri uri = config.GetUri();
 			Assert.AreEqual($"otpauth://totp/FoxDev+Studio:eugene@xfox111.net?secret={config.Secret}&issuer=FoxDev+Studio", uri.AbsoluteUri);
 		}
