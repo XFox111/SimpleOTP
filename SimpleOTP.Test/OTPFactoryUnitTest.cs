@@ -29,7 +29,8 @@ namespace SimpleOTP.Test
 			OTPConfiguration config = OTPConfiguration.GetConfiguration("ESQVTYRM2CWZC3NX24GRRWIAUUWVHWQH", "FoxDev Studio", "eugene@xfox111.net");
 			config.Period = TimeSpan.FromSeconds(3);
 			using OTPFactory factory = new (config, 1500);
-			System.Diagnostics.Debug.WriteLine(factory.Configuration);
+			var testGetConfig = factory.Configuration;
+			System.Diagnostics.Debug.WriteLine(testGetConfig);
 			var code = factory.CurrentCode;
 
 			factory.Configuration = config;

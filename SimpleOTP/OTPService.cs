@@ -96,8 +96,10 @@ namespace SimpleOTP
 		/// <param name="toleranceSpan">Counter span from which OTP codes remain valid.</param>
 		/// <param name="resyncCounter">Defines whether method should resync <see cref="OTPConfiguration.Counter"/> of the <paramref name="target"/> or not after successful validation.</param>
 		/// <returns><c>True</c> if code is valid, <c>False</c> if it isn't.</returns>
-		public static bool ValidateCode(int otp, ref OTPConfiguration target, int toleranceSpan, bool resyncCounter)
+		public static bool ValidateHotp(int otp, ref OTPConfiguration target, int toleranceSpan, bool resyncCounter)
 		{
+			if (target?.Type != OTPType.HOTP)
+				throw new ArgumentException("Invalid configuration. This method only validates HOTP codes. For TOTP codes use OTPService.ValidateTotp()");
 			long currentCounter = target.Counter;
 			List<(int Code, long Counter)> codes = new ();
 			for (long i = currentCounter - toleranceSpan; i <= currentCounter + toleranceSpan; i++)
@@ -123,8 +125,10 @@ namespace SimpleOTP
 		/// <param name="toleranceTime">Time span from which OTP codes remain valid.<br/>
 		/// Default: 15 seconds.</param>
 		/// <returns><c>True</c> if code is valid, <c>False</c> if it isn't.</returns>
-		public static bool ValidateCode(int otp, OTPConfiguration target, TimeSpan? toleranceTime = null)
+		public static bool ValidateTotp(int otp, OTPConfiguration target, TimeSpan? toleranceTime = null)
 		{
+			if (target?.Type != OTPType.TOTP)
+				throw new ArgumentException("Invalid configuration. This method only validates TOTP codes. For HOTP codes use OTPService.ValidateHotp()");
 			toleranceTime ??= TimeSpan.FromSeconds(15);
 			DateTime now = DateTime.UtcNow;
 			List<int> codes = new ();
@@ -133,6 +137,16 @@ namespace SimpleOTP
 
 			return codes.Any(i => i == otp);
 		}
+
+		/// <inheritdoc cref="ValidateHotp(int, ref OTPConfiguration, int, bool)"/>
+		[Obsolete("Use ValidateHotp() instead.")]
+		public static bool ValidateCode(int otp, ref OTPConfiguration target, int toleranceSpan, bool resyncCounter) =>
+			ValidateHotp(otp, ref target, toleranceSpan, resyncCounter);
+
+		/// <inheritdoc cref="ValidateTotp(int, OTPConfiguration, TimeSpan?)"/>
+		[Obsolete("Use ValidateTotp() instead.")]
+		public static bool ValidateCode(int otp, OTPConfiguration target, TimeSpan? toleranceTime = null) =>
+			ValidateTotp(otp, target, toleranceTime);
 
 		private static long GetCurrentCounter(DateTime date, int period) =>
 			(long)(date - DateTime.UnixEpoch).TotalSeconds / period;
