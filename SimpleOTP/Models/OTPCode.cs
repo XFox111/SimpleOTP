@@ -33,7 +33,7 @@ namespace SimpleOTP.Models
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="OTPCode"/> class.<br/>
-		/// Use this contructor only for HOTP key. Otherwise, fill out all properties.
+		/// Use this constructor only for HOTP key. Otherwise, fill out all properties.
 		/// </summary>
 		/// <param name="code">OTP code.</param>
 		public OTPCode(int code) =>
