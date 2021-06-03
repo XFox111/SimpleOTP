@@ -26,7 +26,7 @@ namespace SimpleOTP.Models
 		public Guid Id { get; set; } = Guid.NewGuid();
 
 		/// <summary>
-		/// Gets or sets oTP algorithm type.
+		/// Gets or sets OTP algorithm type.
 		/// </summary>
 		public OTPType Type { get; set; } = OTPType.TOTP;
 
