@@ -27,7 +27,8 @@ See more documentation at [project's wiki](https://github.com/xfox111/SimpleOTP/
 ```csharp
 string sample_config_uri = "otpauth://totp/FoxDev%20Studio:eugene@xfox111.net?secret=ESQVTYRM2CWZC3NX24GRRWIAUUWVHWQH&issuer=FoxDev%20Studio";
 OTPConfiguration config = OTPConfiguration.GetConfiguration(sample_config_uri);
-// OTPModel { Id = af2358b0-3f69-4dd7-9537-32c07d6663aa, Type = TOTP, IssuerLabel = FoxDev Studio, AccountName = eugene@xfox111.net, Secret = ESQVTYRM2CWZC3NX24GRRWIAUUWVHWQH, Issuer = FoxDev Studio, Algorithm = SHA1, Digits = 6, Counter = 0, Period = 00:00:30 }
+// OTPConfiguration { Id = af2358b0-3f69-4dd7-9537-32c07d6663aa, Type = TOTP, IssuerLabel = FoxDev Studio, AccountName = eugene@xfox111.net, Secret = ESQVTYRM2CWZC3NX24GRRWIAUUWVHWQH, Issuer = FoxDev Studio, Algorithm = SHA1, Digits = 6, Counter = 0, Period = 00:00:30 }
+
 
 OTPCode code = OTPService.GenerateCode(ref config);
 // OTPasswordModel { Code = 350386, Expiring = 23-May-21 06:08:30 PM }
@@ -53,7 +54,7 @@ string qrCode = config.GetQrImage(300); // data:image/png;base64,...
 OTPFactory factory = new (config);
 
 factory.CodeUpdated += (newCode) => Console.WriteLine(newCode);
-// OTPasswordModel { Code = 350386, Expiring = 23-May-21 06:08:30 PM }
+// OTPCode { Code = 350386, Expiring = 23-May-21 06:08:30 PM }
 factory.PropertyChanged += (sender, args) =>
 {
 	if (args.PropertyName == nameof(factory.TimeLeft))
