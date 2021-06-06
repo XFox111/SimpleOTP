@@ -217,7 +217,7 @@ namespace SimpleOTP.Models
 			HttpResponseMessage response = client.GetAsync($"https://chart.googleapis.com/chart?cht=qr&chs={qrCodeSize}x{qrCodeSize}&chl={HttpUtility.UrlEncode(GetUri().AbsoluteUri)}").Result;
 
 			if (!response.IsSuccessStatusCode)
-				throw new HttpRequestException("Response status code indicates that request has failed", null, response.StatusCode);
+				throw new HttpRequestException($"Response status code indicates that request has failed (Response code: {response.StatusCode})");
 
 			byte[] imageBytes = await response.Content.ReadAsByteArrayAsync();
 			string imageString = @$"data:image/png;base64,{Convert.ToBase64String(imageBytes)}";
