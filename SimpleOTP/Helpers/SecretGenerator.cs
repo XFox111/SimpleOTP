@@ -27,7 +27,7 @@ namespace SimpleOTP.Helpers
 			if (length > 160 || length < 128)
 				throw new ArgumentOutOfRangeException(nameof(length), "Invalid key length. It should belong to [128-160] bits span");
 
-			byte[] key = new byte[length];
+			byte[] key = new byte[length / 8];
 			new Random().NextBytes(key);
 
 			return Base32Encoder.Encode(key);

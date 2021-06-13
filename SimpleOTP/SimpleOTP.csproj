@@ -12,7 +12,7 @@
 	<PropertyGroup>
 		<PackageId>SimpleOTP</PackageId>
 		<AssemblyName>SimpleOTP</AssemblyName>
-		<Version>1.2.0</Version>
+		<Version>1.2.1</Version>
 		<Description>.NET library for TOTP/HOTP implementation on server (ASP.NET) or client (Xamarin) side</Description>
 		<Authors>Eugene Fox</Authors>
 		<Company>FoxDev Studio</Company>
@@ -22,8 +22,8 @@
 		<RepositoryUrl>https://github.com/XFox111/SimpleOTP</RepositoryUrl>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<PackageTags>otp;totp;dotnet;hotp;authenticator;2fa;mfa;security;oath</PackageTags>
-		<PackageReleaseNotes>- Expanded support to .NET Standard 2.1 and .NET Core 3.1
-- Fixed some documentation typos (https://github.com/XFox111/SimpleOTP/issues/14)</PackageReleaseNotes>
+		<PackageReleaseNotes>- Fixed generated secret length
+- Fixed URI encoding issues in 'OTPConfiguration.GetUri()'</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
