@@ -177,10 +177,10 @@ namespace SimpleOTP.Models
 		/// <returns>Valid OTP AUTH URI.</returns>
 		public Uri GetUri()
 		{
-			string path = $"otpauth://{Type}/{HttpUtility.UrlEncode(IssuerLabel)}";
+			string path = $"otpauth://{Type}/{IssuerLabel}";
 			if (!string.IsNullOrWhiteSpace(AccountName))
 				path += $":{AccountName}";
-			path += $"?secret={Secret}&issuer={HttpUtility.UrlEncode(Issuer)}";
+			path += $"?secret={Secret}&issuer={Issuer}";
 			if (Algorithm != Algorithm.SHA1)
 				path += $"&algorithm={Algorithm}";
 			if (Digits != 6)
