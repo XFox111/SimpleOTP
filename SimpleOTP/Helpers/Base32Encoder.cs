@@ -5,7 +5,8 @@
 // Licensed under MIT license (https://opensource.org/licenses/MIT)
 // ------------------------------------------------------------
 
-using System.Collections.Generic;
+using System;
+using System.Linq;
 
 namespace SimpleOTP.Helpers
 {
@@ -14,6 +15,7 @@ namespace SimpleOTP.Helpers
 	/// </summary>
 	internal static class Base32Encoder
 	{
+		// Standard RFC 4648 Base32 alphabet
 		private const string AllowedCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
 
 		/// <summary>
@@ -23,16 +25,20 @@ namespace SimpleOTP.Helpers
 		/// <returns>Base32 string.</returns>
 		internal static string Encode(byte[] data)
 		{
-			// FIXME: Encoder works correctly only with 160-bit keys
+			string binary = string.Empty;
+			foreach (byte b in data)
+				binary += Convert.ToString(b, 2).PadLeft(8, '0');   // Getting binary sequence to split into 5 digits
+
+			int numberOfBlocks = (binary.Length / 5) + Math.Clamp(binary.Length % 5, 0, 1);
+			string[] sequence = Enumerable.Range(0, numberOfBlocks)
+				.Select(i => binary.Substring(i * 5, Math.Min(5, binary.Length - (i * 5))).PadRight(5, '0'))
+				.ToArray();   // Splitting sequence on groups of 5
+
 			string output = string.Empty;
-			for (int bitIndex = 0; bitIndex < data.Length * 8; bitIndex += 5)
-			{
-				int dualbyte = data[bitIndex / 8] << 8;
-				if ((bitIndex / 8) + 1 < data.Length)
-					dualbyte |= data[(bitIndex / 8) + 1];
-				dualbyte = 0x1f & (dualbyte >> (16 - (bitIndex % 8) - 5));
-				output += AllowedCharacters[dualbyte];
-			}
+			foreach (string str in sequence)
+				output += AllowedCharacters[Convert.ToInt32(str, 2)];
+
+			output = output.PadRight(output.Length + (output.Length % 8), '=');
 
 			return output;
 		}
@@ -44,21 +50,14 @@ namespace SimpleOTP.Helpers
 		/// <returns>Initial byte array.</returns>
 		internal static byte[] Decode(string base32str)
 		{
-			List<byte> output = new ();
-			char[] bytes = base32str.ToCharArray();
-			for (var bitIndex = 0; bitIndex < base32str.Length * 5; bitIndex += 8)
-			{
-				var dualbyte = AllowedCharacters.IndexOf(bytes[bitIndex / 5]) << 10;
-				if ((bitIndex / 5) + 1 < bytes.Length)
-					dualbyte |= AllowedCharacters.IndexOf(bytes[(bitIndex / 5) + 1]) << 5;
-				if ((bitIndex / 5) + 2 < bytes.Length)
-					dualbyte |= AllowedCharacters.IndexOf(bytes[(bitIndex / 5) + 2]);
+			base32str = base32str.Replace("=", string.Empty);   // Removing padding
 
-				dualbyte = 0xff & (dualbyte >> (15 - (bitIndex % 5) - 8));
-				output.Add((byte)dualbyte);
-			}
+			string[] quintets = base32str.Select(i => Convert.ToString(AllowedCharacters.IndexOf(i), 2).PadLeft(5, '0')).ToArray();     // Getting quintets
+			string binary = string.Join(null, quintets);
 
-			return output.ToArray();
+			byte[] output = Enumerable.Range(0, binary.Length / 8).Select(i => Convert.ToByte(binary.Substring(i * 8, 8), 2)).ToArray();
+
+			return output;
 		}
 	}
 }
