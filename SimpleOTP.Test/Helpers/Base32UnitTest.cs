@@ -6,6 +6,7 @@
 // ------------------------------------------------------------
 
 using System;
+using System.Text;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SimpleOTP.Helpers;
@@ -19,19 +20,33 @@ namespace SimpleOTP.Test.Helpers
 	public class Base32UnitTest
 	{
 		/// <summary>
-		/// Test overall work of the encoder.
+		/// Test encoder with byte array.
 		/// </summary>
-		[TestMethod("Overall Base32 encoder test")]
+		[TestMethod("Byte array Base32 encoder test")]
 		public void EncoderTest()
 		{
-			// byte[] bytes = new byte[new Random().Next(128, 161)];    // FIXME: See SimpleOTP.Helpers.Base32Encoder.Encode()
-			byte[] bytes = new byte[160];
+			byte[] bytes = new byte[new Random().Next(16, 20)];
 			new Random().NextBytes(bytes);
 			string str = Base32Encoder.Encode(bytes);
 
-			bytes = Base32Encoder.Decode(str);
-			string result = Base32Encoder.Encode(bytes);
-			Assert.AreEqual(str, result);
+			byte[] result = Base32Encoder.Decode(str);
+			Assert.AreEqual(bytes.Length, result.Length);
+			for (int i = 0; i < bytes.Length; i++)
+				Assert.AreEqual(bytes[i], result[i]);
+		}
+
+		/// <summary>
+		/// Test encoder with string content.
+		/// </summary>
+		[TestMethod("String Base32 encoder test")]
+		public void EncoderStringTest()
+		{
+			string testStr = "Hello, World!";
+			string encodedStr = Base32Encoder.Encode(Encoding.UTF8.GetBytes(testStr));
+
+			byte[] resultBytes = Base32Encoder.Decode(encodedStr);
+			string result = Encoding.UTF8.GetString(resultBytes);
+			Assert.AreEqual(testStr, result);
 		}
 	}
 }

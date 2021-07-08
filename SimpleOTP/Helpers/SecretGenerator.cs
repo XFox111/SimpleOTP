@@ -20,7 +20,7 @@ namespace SimpleOTP.Helpers
 		/// <param name="length">Length of the key in bits<br/>
 		/// It should belong to [128-160] bit span<br/>
 		/// Default is: 160 bits.</param>
-		/// <remarks>CURRENTLY THIS GENERATOR WORKS CORRECTLY ONLY WITH 160-BIT LENGTHS. Set <paramref name="length"/> at your own risk.</remarks>
+		/// <remarks>Number of bits will be rounded down to the nearest number which divides by 8.</remarks>
 		/// <returns>Base32 encoded alphanumeric string with length form 16 to 20 characters.</returns>
 		public static string GenerateSecret(int length = 160)
 		{
