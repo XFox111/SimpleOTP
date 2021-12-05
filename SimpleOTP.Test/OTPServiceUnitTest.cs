@@ -42,6 +42,31 @@ namespace SimpleOTP.Test
 		}
 
 		/// <summary>
+		/// Test time-based OTP generator with customly formatted secret.
+		/// </summary>
+		[TestMethod("Secret format test")]
+		public void FormatTest()
+		{
+			Console.Write("Uppercase space-separated: ");
+			var config = totpConfig with { Secret = "JBSW Y3DP EHPK 3PXP" };
+			var code = OTPService.GenerateCode(ref config, time);
+			Assert.AreEqual(160102, code.Code);
+			Console.WriteLine("Passed.");
+
+			Console.Write("Lowercase space-separated: ");
+			config = totpConfig with { Secret = "jbsw y3dp ehpk 3pxp" };
+			code = OTPService.GenerateCode(ref config, time);
+			Assert.AreEqual(160102, code.Code);
+			Console.WriteLine("Passed.");
+
+			Console.Write("Lowercase: ");
+			config = totpConfig with { Secret = "jbswy3dpehpk3pxp" };
+			code = OTPService.GenerateCode(ref config, time);
+			Assert.AreEqual(160102, code.Code);
+			Console.WriteLine("Passed.");
+		}
+
+		/// <summary>
 		/// Test HOTP generator with pre-calculated code.
 		/// </summary>
 		[TestMethod("HOTP code generation")]

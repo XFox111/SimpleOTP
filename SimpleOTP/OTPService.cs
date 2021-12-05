@@ -48,7 +48,7 @@ namespace SimpleOTP
 		/// </returns>
 		public static OTPCode GenerateCode(ref OTPConfiguration target, DateTime date)
 		{
-			byte[] keyBytes = Base32Encoder.Decode(target.Secret);
+			byte[] keyBytes = Base32Encoder.Decode(target.Secret.ToUpperInvariant().Replace(" ", string.Empty));
 			long counter = target.Type == OTPType.HOTP ? target.Counter : GetCurrentCounter(date.ToUniversalTime(), (int)target.Period.TotalSeconds);
 			byte[] counterBytes = BitConverter.GetBytes(counter);
 
