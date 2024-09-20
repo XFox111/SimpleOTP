@@ -17,16 +17,19 @@
 	// }
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sudo dotnet workload update && dotnet restore",
+	"postCreateCommand": "dotnet restore",
 
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"ms-dotnettools.csdevkit",
 				"bierner.github-markdown-preview",
 				"github.vscode-github-actions",
-				"patcx.vscode-nuget-gallery"
+				"GitHub.vscode-pull-request-github",
+				"Gruntfuggly.todo-tree",
+				"ms-dotnettools.csdevkit",
+				"patcx.vscode-nuget-gallery",
+				"saeris.markdown-github-alerts"
 			]
 		}
 	}

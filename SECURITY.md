@@ -1,15 +1,17 @@
 # Security Policy
 
 ## Supported Versions
-| .NET Version      | Supported          |
-| ----------------- | ------------------ |
-| 5.0+              | :white_check_mark: |
-| Core 3.1+         | :white_check_mark: |
-| Standard 2.1+     | :white_check_mark: |
-| Any older version | :x:                |
 
-### End of support
-After release of new version of framework previous comes out of support in 3 months
+SimpleOTP packages have their versioning system in sync with .NET versions. That means that for each active .NET version there will be a corresponding major version of the packages.
+
+We regularly run security audits and fix any security issues that are found. If you find a security issue, please report it to us as described below.
+
+## .NET support
+
+We support all active .NET versions until the end of their lifecycle. We do not support .NET versions that reached their end of support. That means that at a time there're can be at max three versions of .NET that are being supported (LTS, active, and preview or next LTS).
+
+> [!IMPORTANT]
+Support of .NET preview versions is not guaranteed and is to be announced.
 
 ## Reporting a Vulnerability
 If you found any vulnerability, please tell us on opensource@xfox111.net. You'll get all updates on a reported issue, unless you stated it in the message
