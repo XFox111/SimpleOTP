@@ -53,8 +53,8 @@ public readonly partial struct OtpAlgorithm : IEquatable<OtpAlgorithm>, IEquatab
 
 		if (StandardAlgorithmsRegex().IsMatch(value))
 			_value = StandardAlgorithmsRegex().Match(value).Value.ToUpperInvariant();
-
-		_value = value.ToUpperInvariant();
+		else
+			_value = value.ToUpperInvariant();
 	}
 
 	/// <inheritdoc/>

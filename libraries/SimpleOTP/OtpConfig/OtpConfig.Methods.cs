@@ -60,10 +60,10 @@ public partial record class OtpConfig : IXmlSerializable
 				query["algorithm"] = Algorithm;
 		}
 
-		if (format == OtpUriFormat.Full || Digits != 6)
+		if (format.HasFlag(OtpUriFormat.Full) || Digits != 6)
 			query["digits"] = Digits.ToString();
 
-		if (format == OtpUriFormat.Full || Period != 30)
+		if (format.HasFlag(OtpUriFormat.Full) || Period != 30)
 			query["period"] = Period.ToString();
 
 		foreach (string key in _reservedKeys)
@@ -81,7 +81,7 @@ public partial record class OtpConfig : IXmlSerializable
 	/// <param name="error">The error message returned if the <see cref="OtpConfig"/> object is invalid.</param>
 	/// <param name="format">The <see cref="OtpUriFormat"/> to use for validation.</param>
 	/// <returns><c>true</c> if the conversion succeeded; otherwise, <c>false</c>.</returns>
-	public void IsValid([NotNullWhen(false)] out string? error, OtpUriFormat format = OtpUriFormat.Google) =>
+	public bool IsValid([NotNullWhen(false)] out string? error, OtpUriFormat format = OtpUriFormat.Google) =>
 		Validate(this, out error, format);
 
 	/// <inheritdoc/>

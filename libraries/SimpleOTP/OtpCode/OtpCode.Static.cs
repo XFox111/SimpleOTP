@@ -11,8 +11,8 @@ public readonly partial struct OtpCode
 	public static implicit operator OtpCode(string code) => new(code);
 
 	public static bool operator ==(OtpCode left, OtpCode right) => left.Equals(right);
-	public static bool operator ==(string left, OtpCode right) => left.Equals(right._value);
-	public static bool operator ==(OtpCode left, string right) => left._value.Equals(right);
+	public static bool operator ==(string left, OtpCode right) => right.Equals(left);
+	public static bool operator ==(OtpCode left, string right) => left.Equals(right);
 
 	public static bool operator !=(OtpCode left, OtpCode right) => !(left == right);
 	public static bool operator !=(string left, OtpCode right) => !(left == right);

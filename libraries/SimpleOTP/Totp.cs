@@ -73,6 +73,22 @@ public class Totp : Otp
 	public OtpCode Generate(DateTimeOffset date) =>
 		Generate(date.ToUnixTimeSeconds() / Period);
 
+
+	/// <summary>
+	/// Validates an OTP code with tolerance and base counter value, and returns the resynchronization value.
+	/// </summary>
+	/// <param name="code">The OTP code to validate.</param>
+	/// <param name="tolerance">The tolerance span for code validation.</param>
+	/// <param name="baseTime">The base timestamp value.</param>
+	/// <param name="resyncValue">The resynchronization value. Indicates how much given OTP code is ahead or behind the current counter value.</param>
+	/// <returns><c>true</c> if the OTP code is valid; otherwise, <c>false</c>.</returns>
+	/// <exception cref="InvalidOperationException">
+	/// Implementation for the <see cref="Otp.Algorithm"/> algorithm was not found.
+	/// Use <see cref="HashAlgorithmProviders.AddProvider(OtpAlgorithm)"/> to register an implementation.
+	/// </exception>
+	public bool Validate(OtpCode code, ToleranceSpan tolerance, DateTimeOffset baseTime, out int resyncValue) =>
+		Validate(code, tolerance, baseTime.ToUnixTimeSeconds() / 30, out resyncValue);
+
 	/// <summary>
 	/// Gets the current counter value based on the current UTC time and the configured time period.
 	/// </summary>
