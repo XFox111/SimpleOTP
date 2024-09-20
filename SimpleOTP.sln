@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleOTP.DependencyInjecti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleOTP", "libraries\SimpleOTP\SimpleOTP.csproj", "{3D52F0F0-601B-4DB3-B82F-46AFF352C046}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleOTP.Tests", "SimpleOTP.Tests\SimpleOTP.Tests.csproj", "{ABD83245-A354-45E0-88B5-DD38863C5DEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{3D52F0F0-601B-4DB3-B82F-46AFF352C046}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D52F0F0-601B-4DB3-B82F-46AFF352C046}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D52F0F0-601B-4DB3-B82F-46AFF352C046}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABD83245-A354-45E0-88B5-DD38863C5DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABD83245-A354-45E0-88B5-DD38863C5DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABD83245-A354-45E0-88B5-DD38863C5DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABD83245-A354-45E0-88B5-DD38863C5DEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{014512A7-1119-4410-8B93-4B6B0B30CE44} = {3C07FF44-31AD-4E2B-A651-89890708590A}
