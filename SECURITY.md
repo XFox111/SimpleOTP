@@ -13,6 +13,9 @@ We support all active .NET versions until the end of their lifecycle. We do not 
 > [!IMPORTANT]
 Support of .NET preview versions is not guaranteed and is to be announced.
 
+> [!IMPORTANT]
+.NET Core, .NET Standard and other .NET editions existing prior to .NET 5 are not and will not be supported
+
 ## Reporting a Vulnerability
 If you found any vulnerability, please tell us on opensource@xfox111.net. You'll get all updates on a reported issue, unless you stated it in the message
 
