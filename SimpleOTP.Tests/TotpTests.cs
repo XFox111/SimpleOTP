@@ -1,3 +1,5 @@
+using NUnit.Framework;
+
 namespace SimpleOTP.Tests;
 
 [TestFixture]
