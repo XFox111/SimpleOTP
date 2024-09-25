@@ -8,8 +8,13 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
+
+	<PropertyGroup>
 		<PackageId>EugeneFox.SimpleOTP</PackageId>
-		<Version>8.0.0</Version>
+		<Version>8.0.0.0-rc1</Version>
 		<Authors>Eugene Fox</Authors>
 		<Copyright>Copyright © Eugene Fox 2024</Copyright>
 		<NeutralLanguage>en-US</NeutralLanguage>

@@ -9,7 +9,7 @@
 
 	<PropertyGroup>
 		<PackageId>EugeneFox.SimpleOTP.DependencyInjection</PackageId>
-		<Version>8.0.0</Version>
+		<Version>8.0.0.0-rc1</Version>
 		<Authors>Eugene Fox</Authors>
 		<Copyright>Copyright © Eugene Fox 2024</Copyright>
 		<NeutralLanguage>en-US</NeutralLanguage>
@@ -21,8 +21,12 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/XFox111/SimpleOTP.git</RepositoryUrl>
-		<PackageProjectUrl>
-			https://github.com/XFox111/SimpleOTP/blob/main/src/SimpleOTP.DependencyInjection</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/XFox111/SimpleOTP</PackageProjectUrl>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -53,8 +57,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.1" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.*" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions"
+			Version="8.0.*" />
 	</ItemGroup>
 
 </Project>
