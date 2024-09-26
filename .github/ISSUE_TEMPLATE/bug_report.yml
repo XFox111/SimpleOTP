@@ -1,0 +1,107 @@
+name: "🐞 Bug Report"
+description: Create a report to help us improve the library
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+assignees:
+  - xfox111
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+
+  - type: textarea
+    id: desc
+    attributes:
+      label: Description
+      description: A clear and concise description of what the bug is.
+      placeholder: e.g. OtpSecret.CreateNew() creates an empty secret
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Expected behavior
+      description: A clear and concise description of what you expected to happen.
+      placeholder: e.g. OtpSecret.CreateNew() should create non-empty secret with length of 32 characters when stringified, and a byte array of length 20 with non-zero values
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Minimal repoduction environment
+      description: Provide a link to source code or online editor with minimal reproduction enviornment that showcases the issue
+    validations:
+      required: true
+
+  - type: dropdown
+    id: dotnet-version
+    attributes:
+      label: .NET version of your project
+      options:
+        - ".NET 8"
+        - ".NET Preview"
+        - "Other"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Project type
+      options:
+        - "Console"
+        - "Class library"
+        - "Web API (ASP.NET)"
+        - ".NET MAUI"
+        - "Other"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: package
+    attributes:
+      label: Affected packages
+      options:
+        - "SimpleOTP"
+        - "SimpleOTP.DependencyInjection"
+        - "Both"
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      placeholder: e.g. 8.0.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add any other context about the problem here.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: requested-help
+    attributes:
+      label: Are you willing to submit a PR for this issue?
+      options:
+        - "yes"
+        - "no"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checkboxes
+    attributes:
+      label: Validations
+      description: Before submitting the issue, please make sure you do the following
+      options:
+        - label: Check that there isn't already an issue that reports the same bug to avoid creating a duplicate.
+          required: true
+        - label: The provided reproduction is a minimal reproducible example of the bug.
+          required: true

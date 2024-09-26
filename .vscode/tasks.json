@@ -1,0 +1,80 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"build",
+				"${workspaceFolder}/SimpleOTP.sln",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:NoSummary;ForceNoAlign"
+			],
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "restore",
+			"group": "build",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"restore",
+				"${workspaceFolder}/SimpleOTP.sln"
+			],
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "publish: SimpleOTP",
+			"group": "build",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"publish",
+				"${workspaceFolder}/libraries/SimpleOTP/SimpleOTP.csproj",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:NoSummary;ForceNoAlign"
+			],
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "publish: SimpleOTP.DependencyInjection",
+			"group": "build",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"publish",
+				"${workspaceFolder}/libraries/SimpleOTP.DependencyInjection/SimpleOTP.DependencyInjection.csproj",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:NoSummary;ForceNoAlign"
+			],
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "pack: SimpleOTP",
+			"group": "build",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"pack",
+				"${workspaceFolder}/libraries/SimpleOTP/SimpleOTP.csproj"
+			],
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "pack: SimpleOTP.DependencyInjection",
+			"group": "build",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"pack",
+				"${workspaceFolder}/libraries/SimpleOTP.DependencyInjection/SimpleOTP.DependencyInjection.csproj"
+			],
+			"problemMatcher": "$msCompile"
+		}
+	]
+}

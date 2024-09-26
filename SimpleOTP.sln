@@ -1,51 +1,40 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.6.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleOTP", "SimpleOTP\SimpleOTP.csproj", "{518EF6D5-DB32-4406-B289-6E11DB6E1D67}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libraries", "libraries", "{3C07FF44-31AD-4E2B-A651-89890708590A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleOTP.Test", "SimpleOTP.Test\SimpleOTP.Test.csproj", "{54AC322C-6119-456B-BFE6-CCF3CC504C56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleOTP.DependencyInjection", "libraries\SimpleOTP.DependencyInjection\SimpleOTP.DependencyInjection.csproj", "{014512A7-1119-4410-8B93-4B6B0B30CE44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleOTP", "libraries\SimpleOTP\SimpleOTP.csproj", "{3D52F0F0-601B-4DB3-B82F-46AFF352C046}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleOTP.Tests", "SimpleOTP.Tests\SimpleOTP.Tests.csproj", "{ABD83245-A354-45E0-88B5-DD38863C5DEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{518EF6D5-DB32-4406-B289-6E11DB6E1D67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{518EF6D5-DB32-4406-B289-6E11DB6E1D67}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{518EF6D5-DB32-4406-B289-6E11DB6E1D67}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{518EF6D5-DB32-4406-B289-6E11DB6E1D67}.Debug|x64.Build.0 = Debug|Any CPU
-		{518EF6D5-DB32-4406-B289-6E11DB6E1D67}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{518EF6D5-DB32-4406-B289-6E11DB6E1D67}.Debug|x86.Build.0 = Debug|Any CPU
-		{518EF6D5-DB32-4406-B289-6E11DB6E1D67}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{518EF6D5-DB32-4406-B289-6E11DB6E1D67}.Release|Any CPU.Build.0 = Release|Any CPU
-		{518EF6D5-DB32-4406-B289-6E11DB6E1D67}.Release|x64.ActiveCfg = Release|Any CPU
-		{518EF6D5-DB32-4406-B289-6E11DB6E1D67}.Release|x64.Build.0 = Release|Any CPU
-		{518EF6D5-DB32-4406-B289-6E11DB6E1D67}.Release|x86.ActiveCfg = Release|Any CPU
-		{518EF6D5-DB32-4406-B289-6E11DB6E1D67}.Release|x86.Build.0 = Release|Any CPU
-		{54AC322C-6119-456B-BFE6-CCF3CC504C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{54AC322C-6119-456B-BFE6-CCF3CC504C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{54AC322C-6119-456B-BFE6-CCF3CC504C56}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{54AC322C-6119-456B-BFE6-CCF3CC504C56}.Debug|x64.Build.0 = Debug|Any CPU
-		{54AC322C-6119-456B-BFE6-CCF3CC504C56}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{54AC322C-6119-456B-BFE6-CCF3CC504C56}.Debug|x86.Build.0 = Debug|Any CPU
-		{54AC322C-6119-456B-BFE6-CCF3CC504C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{54AC322C-6119-456B-BFE6-CCF3CC504C56}.Release|Any CPU.Build.0 = Release|Any CPU
-		{54AC322C-6119-456B-BFE6-CCF3CC504C56}.Release|x64.ActiveCfg = Release|Any CPU
-		{54AC322C-6119-456B-BFE6-CCF3CC504C56}.Release|x64.Build.0 = Release|Any CPU
-		{54AC322C-6119-456B-BFE6-CCF3CC504C56}.Release|x86.ActiveCfg = Release|Any CPU
-		{54AC322C-6119-456B-BFE6-CCF3CC504C56}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {247D25FB-623A-4CF6-ABD4-06B4CBF0AD3E}
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{014512A7-1119-4410-8B93-4B6B0B30CE44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{014512A7-1119-4410-8B93-4B6B0B30CE44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{014512A7-1119-4410-8B93-4B6B0B30CE44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{014512A7-1119-4410-8B93-4B6B0B30CE44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D52F0F0-601B-4DB3-B82F-46AFF352C046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D52F0F0-601B-4DB3-B82F-46AFF352C046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D52F0F0-601B-4DB3-B82F-46AFF352C046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D52F0F0-601B-4DB3-B82F-46AFF352C046}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABD83245-A354-45E0-88B5-DD38863C5DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABD83245-A354-45E0-88B5-DD38863C5DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABD83245-A354-45E0-88B5-DD38863C5DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABD83245-A354-45E0-88B5-DD38863C5DEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{014512A7-1119-4410-8B93-4B6B0B30CE44} = {3C07FF44-31AD-4E2B-A651-89890708590A}
+		{3D52F0F0-601B-4DB3-B82F-46AFF352C046} = {3C07FF44-31AD-4E2B-A651-89890708590A}
 	EndGlobalSection
 EndGlobal

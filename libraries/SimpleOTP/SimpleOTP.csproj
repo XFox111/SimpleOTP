@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>EugeneFox.SimpleOTP</PackageId>
+		<Version>8.0.0.0-rc1</Version>
+		<Authors>Eugene Fox</Authors>
+		<Copyright>Copyright © Eugene Fox 2024</Copyright>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/XFox111/SimpleOTP.git</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/XFox111/SimpleOTP</PackageProjectUrl>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageTags>otp;totp;hotp;authenticator;authentication;one-time;2fa;mfa;security;otpauth</PackageTags>
+		<Description>
+			Feature-rich, fast, and customizable library for implementation TOTP/HOTP authenticators and validators.
+		</Description>
+		<PackageReleaseNotes>
+			(BREAKING CHANGE) Complete overhaul of the library. See https://github.com/XFox111/SimpleOTP/releases/tag/2.0.0 for more details.
+		</PackageReleaseNotes>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\assets\icon.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="..\..\README.md">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
+
+</Project>

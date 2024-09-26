@@ -1,0 +1,40 @@
+name: "Build workflow"
+
+on:
+  push:
+    branches: [ "main" ]
+    paths-ignore:
+      - "**.md"
+      - "LICENSE"
+      - "PRIVACY"
+      - ".github/*"
+      - ".vscode/*"
+      - ".devcontainer/*"
+      - "!.github/workflows/pr-workflow.yml"
+  pull_request:
+    branches: [ "main" ]
+    paths-ignore:
+      - "**.md"
+      - "LICENSE"
+      - "PRIVACY"
+      - ".github/*"
+      - ".vscode/*"
+      - ".devcontainer/*"
+      - "!.github/workflows/pr-workflow.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - run: dotnet restore
+      - run: dotnet build --no-restore
+      - run: dotnet test --no-restore --verbosity normal

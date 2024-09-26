@@ -1,0 +1,52 @@
+name: "Release workflow"
+
+on:
+  release:
+    types: [ published ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - run: dotnet restore
+      - run: dotnet pack
+
+      - name: Drop artifacts
+        uses: actions/upload-artifact@main
+        with:
+          name: packages
+          path: libraries/**/Release/EugeneFox.SimpleOTP*.?nupkg
+
+  publish-nuget:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/download-artifact@main
+        with:
+          name: packages
+
+      - name: Publish NuGet and symbols
+        uses: edumserrano/nuget-push@v1.2.2
+        with:
+          api-key: ${{ secrets.NUGET_API_KEY }}
+          working-directory: .
+
+  publish-github:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/download-artifact@main
+        with:
+          name: packages
+
+      - name: dotnet nuget push
+        run: dotnet nuget push *.nupkg -k ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/xfox111/index.json --skip-duplicate --no-symbols
