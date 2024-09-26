@@ -45,4 +45,6 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: packages
-          path: libraries/**/Debug/EugeneFox.SimpleOTP*.*nupkg
+          path: |
+            libraries/SimpleOTP/bin/Debug/EugeneFox.SimpleOTP*.*nupkg
+            libraries/SimpleOTP.DependencyInjection/bin/Debug/EugeneFox.SimpleOTP.DependencyInjection*.*nupkg
