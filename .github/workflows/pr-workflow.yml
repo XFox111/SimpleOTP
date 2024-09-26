@@ -38,3 +38,11 @@ jobs:
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: dotnet test --no-restore --verbosity normal
+
+      - run: dotnet pack --no-restore --configuration Debug
+
+      - name: Drop artifacts
+        uses: actions/upload-artifact@main
+        with:
+          name: packages
+          path: libraries/**/Debug/EugeneFox.SimpleOTP*.?nupkg
