@@ -1,7 +1,7 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/xfox111/SimpleOTP)](https://github.com/xfox111/SimpleOTP/releases/latest)
 [![GitHub last commit](https://img.shields.io/github/last-commit/xfox111/SimpleOTP?label=Last+update)](https://github.com/XFox111/SimpleOTP/commits/main)
 
-![SimpleOTP](https://github.com/user-attachments/assets/d0e7f67a-61e0-49db-9ce9-5e20af328c96)
+![SimpleOTP](https://raw.githubusercontent.com/XFox111/SimpleOTP/refs/heads/main/assets/banner.svg)
 
 Feature-rich and flexible .NET library for implementation of OTP authenticators and validatiors.
 
