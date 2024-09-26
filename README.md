@@ -19,8 +19,8 @@ Feature-rich and flexible .NET library for implementation of OTP authenticators 
 
 | Package | Info | Download |
 | --- | --- | --- |
-| `EugeneFox.SimpleOTP` | [![Nuget](https://img.shields.io/nuget/v/EugeneFox.SimpleOTP)][nuget]<br />[![Nuget](https://img.shields.io/nuget/dt/EugeneFox.SimpleOTP)][nuget] | [NuGet Gallery][nuget]<br />[GitHub Releases](https://github.com/xfox111/SimpleOTP/releases/latest) |
-| `EugeneFox.SimpleOTP.DependencyInjection` | [![Nuget](https://img.shields.io/nuget/v/EugeneFox.SimpleOTP.DependencyInjection)][nuget-di]<br />[![Nuget](https://img.shields.io/nuget/dt/EugeneFox.SimpleOTP.DependencyInjection)][nuget-di] | [NuGet Gallery][nuget-di]<br />[GitHub Releases](https://github.com/xfox111/SimpleOTP/releases/latest) |
+| `EugeneFox.SimpleOTP` | [![Nuget](https://img.shields.io/nuget/v/EugeneFox.SimpleOTP)][nuget]<br />[![Nuget](https://img.shields.io/nuget/dt/EugeneFox.SimpleOTP)][nuget] | [NuGet Gallery][nuget]<br />[GitHub NuGet Registry][ghnr] |
+| `EugeneFox.SimpleOTP.DependencyInjection` | [![Nuget](https://img.shields.io/nuget/v/EugeneFox.SimpleOTP.DependencyInjection)][nuget-di]<br />[![Nuget](https://img.shields.io/nuget/dt/EugeneFox.SimpleOTP.DependencyInjection)][nuget-di] | [NuGet Gallery][nuget-di]<br />[GitHub NuGet Registry][ghnr-di] |
 
 Use these commands to install SimpleOTP package in your project:
 ```bash
@@ -36,7 +36,7 @@ Please refer to [project's Wiki](https://github.com/XFox111/SimpleOTP/wiki) for 
 
 ## Contributing
 [![GitHub issues](https://img.shields.io/github/issues/xfox111/SimpleOTP)](https://github.com/xfox111/SimpleOTP/issues)
-[![CI](https://github.com/XFox111/SimpleOTP/actions/workflows/cd_pipeline.yaml/badge.svg)](https://github.com/XFox111/SimpleOTP/actions/workflows/cd_pipeline.yaml)
+[![CI](https://github.com/XFox111/SimpleOTP/actions/workflows/release-workflow.yml/badge.svg)](https://github.com/XFox111/SimpleOTP/actions/workflows/cd_pipeline.yaml)
 [![GitHub repo size](https://img.shields.io/github/repo-size/xfox111/SimpleOTP?label=repo%20size)](https://github.com/xfox111/SimpleOTP)
 
 There are many ways in which you can participate in the project, for example:
@@ -59,4 +59,6 @@ If you are interested in fixing issues and contributing directly to the code bas
 [otpauth-ID]: https://www.ietf.org/archive/id/draft-linuxgemini-otpauth-uri-00.html
 [nuget]: https://www.nuget.org/packages/EugeneFox.SimpleOTP
 [nuget-di]: https://www.nuget.org/packages/EugeneFox.SimpleOTP.DependencyInjection
+[ghnr]: https://github.com/XFox111/SimpleOTP/pkgs/nuget/EugeneFox.SimpleOTP
+[ghnr-di]: https://github.com/XFox111/SimpleOTP/pkgs/nuget/EugeneFox.SimpleOTP.DependencyInjection
 [mit]: https://github.com/XFox111/SimpleOTP/blob/main/LICENSE

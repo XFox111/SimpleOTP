@@ -38,3 +38,17 @@ jobs:
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: dotnet test --no-restore --verbosity normal
+
+      - run: dotnet pack --no-restore --configuration Debug
+
+      - name: Drop SimpleOTP
+        uses: actions/upload-artifact@main
+        with:
+          name: SimpleOTP
+          path: libraries/SimpleOTP/bin/Debug/EugeneFox.SimpleOTP*.*nupkg
+          
+      - name: Drop SimpleOTP.DependencyInjection
+        uses: actions/upload-artifact@main
+        with:
+          name: SimpleOTP.DependencyInjection
+          path: libraries/SimpleOTP.DependencyInjection/bin/Debug/EugeneFox.SimpleOTP.DependencyInjection*.*nupkg
