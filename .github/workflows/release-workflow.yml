@@ -33,6 +33,7 @@ jobs:
           path: libraries/SimpleOTP.DependencyInjection/bin/Release/EugeneFox.SimpleOTP.DependencyInjection*.*nupkg
 
   publish-nuget:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
@@ -47,6 +48,7 @@ jobs:
           working-directory: .
 
   publish-github:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
