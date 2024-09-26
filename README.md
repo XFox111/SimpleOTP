@@ -1,7 +1,7 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/xfox111/SimpleOTP)](https://github.com/xfox111/SimpleOTP/releases/latest)
 [![GitHub last commit](https://img.shields.io/github/last-commit/xfox111/SimpleOTP?label=Last+update)](https://github.com/XFox111/SimpleOTP/commits/main)
 
-![SimpleOTP](https://cdn.xfox111.net/projects/simple-otp/SimpleOTP.svg)
+![SimpleOTP](https://github.com/user-attachments/assets/d0e7f67a-61e0-49db-9ce9-5e20af328c96)
 
 Feature-rich and flexible .NET library for implementation of OTP authenticators and validatiors.
 
@@ -19,8 +19,8 @@ Feature-rich and flexible .NET library for implementation of OTP authenticators 
 
 | Package | Info | Download |
 | --- | --- | --- |
-| `EugeneFox.SimpleOTP` | [![Nuget](https://img.shields.io/nuget/v/EugeneFox.SimpleOTP)][nuget]<br />[![Nuget](https://img.shields.io/nuget/dt/EugeneFox.SimpleOTP)][nuget] | [NuGet Gallery][nuget]<br />[GitHub NuGet Registry][ghnr] |
-| `EugeneFox.SimpleOTP.DependencyInjection` | [![Nuget](https://img.shields.io/nuget/v/EugeneFox.SimpleOTP.DependencyInjection)][nuget-di]<br />[![Nuget](https://img.shields.io/nuget/dt/EugeneFox.SimpleOTP.DependencyInjection)][nuget-di] | [NuGet Gallery][nuget-di]<br />[GitHub NuGet Registry][ghnr-di] |
+| `EugeneFox.SimpleOTP` | [![Nuget](https://img.shields.io/nuget/v/EugeneFox.SimpleOTP)][nuget] / [![Nuget](https://img.shields.io/nuget/dt/EugeneFox.SimpleOTP)][nuget] | [NuGet Gallery][nuget] / [GitHub NuGet Registry][ghnr] |
+| `EugeneFox.SimpleOTP.DependencyInjection` | [![Nuget](https://img.shields.io/nuget/v/EugeneFox.SimpleOTP.DependencyInjection)][nuget-di] / [![Nuget](https://img.shields.io/nuget/dt/EugeneFox.SimpleOTP.DependencyInjection)][nuget-di] | [NuGet Gallery][nuget-di] / [GitHub NuGet Registry][ghnr-di] |
 
 Use these commands to install SimpleOTP package in your project:
 ```bash
