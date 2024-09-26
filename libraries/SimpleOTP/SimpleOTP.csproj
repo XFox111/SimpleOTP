@@ -14,7 +14,7 @@
 
 	<PropertyGroup>
 		<PackageId>EugeneFox.SimpleOTP</PackageId>
-		<Version>8.0.0.0-rc1</Version>
+		<Version>8.0.0.0</Version>
 		<Authors>Eugene Fox</Authors>
 		<Copyright>Copyright © Eugene Fox 2024</Copyright>
 		<NeutralLanguage>en-US</NeutralLanguage>
