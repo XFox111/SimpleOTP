@@ -54,8 +54,8 @@ If you are interested in fixing issues and contributing directly to the code bas
 
 > ©2024 Eugene Fox. Licensed under [MIT license][mit]
 
-[RFC-6238]: https://
-[RFC-4226]: https://
+[RFC-6238]: https://www.rfc-editor.org/rfc/rfc6238
+[RFC-4226]: https://www.rfc-editor.org/rfc/rfc4226
 [otpauth-ID]: https://www.ietf.org/archive/id/draft-linuxgemini-otpauth-uri-00.html
 [nuget]: https://www.nuget.org/packages/EugeneFox.SimpleOTP
 [nuget-di]: https://www.nuget.org/packages/EugeneFox.SimpleOTP.DependencyInjection
