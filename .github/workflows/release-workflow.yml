@@ -20,11 +20,17 @@ jobs:
       - run: dotnet restore
       - run: dotnet pack
 
-      - name: Drop artifacts
+      - name: Drop SimpleOTP
         uses: actions/upload-artifact@main
         with:
-          name: packages
-          path: libraries/**/Release/EugeneFox.SimpleOTP*.?nupkg
+          name: SimpleOTP
+          path: libraries/SimpleOTP/bin/Release/EugeneFox.SimpleOTP*.*nupkg
+
+      - name: Drop SimpleOTP.DependencyInjection
+        uses: actions/upload-artifact@main
+        with:
+          name: SimpleOTP.DependencyInjection
+          path: libraries/SimpleOTP.DependencyInjection/bin/Release/EugeneFox.SimpleOTP.DependencyInjection*.*nupkg
 
   publish-nuget:
     runs-on: ubuntu-latest
@@ -32,7 +38,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@main
         with:
-          name: packages
+          merge-multiple: true
 
       - name: Publish NuGet and symbols
         uses: edumserrano/nuget-push@v1.2.2
@@ -46,7 +52,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@main
         with:
-          name: packages
+          merge-multiple: true
 
       - name: dotnet nuget push
         run: dotnet nuget push *.nupkg -k ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/xfox111/index.json --skip-duplicate --no-symbols
