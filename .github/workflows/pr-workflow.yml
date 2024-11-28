@@ -2,7 +2,7 @@ name: "Build workflow"
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "next" ]
     paths-ignore:
       - "**.md"
       - "LICENSE"
@@ -12,7 +12,7 @@ on:
       - ".devcontainer/*"
       - "!.github/workflows/pr-workflow.yml"
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "next" ]
     paths-ignore:
       - "**.md"
       - "LICENSE"
@@ -33,7 +33,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: 9.0.x
 
       - run: dotnet restore
       - run: dotnet build --no-restore
@@ -46,7 +46,7 @@ jobs:
         with:
           name: SimpleOTP
           path: libraries/SimpleOTP/bin/Debug/EugeneFox.SimpleOTP*.*nupkg
-          
+
       - name: Drop SimpleOTP.DependencyInjection
         uses: actions/upload-artifact@main
         with:
