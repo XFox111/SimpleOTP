@@ -2,8 +2,6 @@ using System.Security.Cryptography;
 
 namespace SimpleOTP;
 
-// TODO: Add tests
-
 /// <summary>
 /// Represents an abstract class for generating and validating One-Time Passwords (OTP).
 /// </summary>
