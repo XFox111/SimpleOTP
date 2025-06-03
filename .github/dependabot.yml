@@ -11,9 +11,7 @@ updates:
   - package-ecosystem: "nuget" # See documentation for possible values
     directory: "/" # Location of package manifests
     assignees:
-      - "xfox111"
-    reviewers:
-      - "xfox111"
+      - "XFox111"
     schedule:
       interval: monthly
     rebase-strategy: disabled
@@ -22,9 +20,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     assignees:
-      - "xfox111"
-    reviewers:
-      - "xfox111"
+      - "XFox111"
     schedule:
       interval: monthly
     rebase-strategy: disabled
@@ -33,9 +29,7 @@ updates:
   - package-ecosystem: "devcontainers"
     directory: "/"
     assignees:
-      - "xfox111"
-    reviewers:
-      - "xfox111"
+      - "XFox111"
     schedule:
       interval: monthly
     rebase-strategy: disabled
