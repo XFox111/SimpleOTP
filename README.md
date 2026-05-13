@@ -52,7 +52,7 @@ If you are interested in fixing issues and contributing directly to the code bas
 [![GitHub](https://img.shields.io/badge/%40xfox111-GitHub?logo=github&logoColor=%23181717&label=GitHub&labelColor=white&color=%23181717)](https://github.com/xfox111)
 [![Buy Me a Coffee](https://img.shields.io/badge/%40xfox111-BMC?logo=buymeacoffee&logoColor=black&label=Buy%20me%20a%20coffee&labelColor=white&color=%23FFDD00)](https://buymeacoffee.com/xfox111)
 
-> ©2025 Eugene Fox. Licensed under [MIT license][mit]
+> ©2026 Eugene Fox. Licensed under [MIT license][mit]
 
 [RFC-6238]: https://www.rfc-editor.org/rfc/rfc6238
 [RFC-4226]: https://www.rfc-editor.org/rfc/rfc4226
