@@ -15,7 +15,7 @@
 
 	<PropertyGroup>
 		<PackageId>EugeneFox.SimpleOTP</PackageId>
-		<Version>10.0.2.0</Version>
+		<Version>10.0.3.0</Version>
 		<Authors>Eugene Fox</Authors>
 		<Copyright>Copyright © Eugene Fox 2026</Copyright>
 		<NeutralLanguage>en-US</NeutralLanguage>
@@ -36,8 +36,7 @@
 			Feature-rich, fast, and customizable library for implementation TOTP/HOTP authenticators and validators.
 		</Description>
 		<PackageReleaseNotes>
-			- Added support for .NET 10
-			- Marked library as AOT compatible
+			- Fixed OTP config incorrect validation of TOTP period and code length.
 		</PackageReleaseNotes>
 	</PropertyGroup>
 

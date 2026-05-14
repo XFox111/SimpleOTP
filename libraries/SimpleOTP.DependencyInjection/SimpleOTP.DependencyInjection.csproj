@@ -9,7 +9,7 @@
 
 	<PropertyGroup>
 		<PackageId>EugeneFox.SimpleOTP.DependencyInjection</PackageId>
-		<Version>10.0.2.0</Version>
+		<Version>10.0.3.0</Version>
 		<Authors>Eugene Fox</Authors>
 		<Copyright>Copyright © Eugene Fox 2026</Copyright>
 		<NeutralLanguage>en-US</NeutralLanguage>
