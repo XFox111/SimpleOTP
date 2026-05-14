@@ -114,12 +114,12 @@ public partial record class OtpConfig
 
 		if (format.HasFlag(OtpUriFormat.Yubico))
 		{
-			if (config.Type == OtpType.Totp && config.Period is not 15 or 30 or 60)
+			if (config is { Type: OtpType.Totp, Period: not (15 or 30 or 60) })
 				errors.Add($"- '{nameof(config.Period)}' must be 15, 30 or 60.");
 		}
 
 		// Check for digits value
-		if (config.Digits is not 6 or 8)
+		if (config.Digits is not (6 or 8))
 		{
 			// Now it's time for IBM and Yubico to be weird
 			if (format.HasFlag(OtpUriFormat.IBM) && config.Digits is not 7 and not 9)
