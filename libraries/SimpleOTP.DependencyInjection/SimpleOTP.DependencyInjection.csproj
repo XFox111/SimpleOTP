@@ -9,7 +9,7 @@
 
 	<PropertyGroup>
 		<PackageId>EugeneFox.SimpleOTP.DependencyInjection</PackageId>
-		<Version>10.0.3.0</Version>
+		<Version>10.0.4.0</Version>
 		<Authors>Eugene Fox</Authors>
 		<Copyright>Copyright © Eugene Fox 2026</Copyright>
 		<NeutralLanguage>en-US</NeutralLanguage>
@@ -37,7 +37,7 @@
 			service in your application.
 		</Description>
 		<PackageReleaseNotes>
-			Updated `Microsoft.Extensions.Configuration.Binder` and `Microsoft.Extensions.DependencyInjection.Abstractions` to version 10.0.7.
+			Updated `Microsoft.Extensions.Configuration.Binder` and `Microsoft.Extensions.DependencyInjection.Abstractions` to version 10.0.8.
 		</PackageReleaseNotes>
 	</PropertyGroup>
 
