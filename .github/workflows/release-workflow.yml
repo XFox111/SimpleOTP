@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v5
@@ -21,13 +21,13 @@ jobs:
       - run: dotnet pack
 
       - name: Drop SimpleOTP
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v7
         with:
           name: SimpleOTP
           path: libraries/SimpleOTP/bin/Release/EugeneFox.SimpleOTP*.*nupkg
 
       - name: Drop SimpleOTP.DependencyInjection
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v7
         with:
           name: SimpleOTP.DependencyInjection
           path: libraries/SimpleOTP.DependencyInjection/bin/Release/EugeneFox.SimpleOTP.DependencyInjection*.*nupkg
@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/download-artifact@main
+      - uses: actions/download-artifact@v7
         with:
           merge-multiple: true
 
@@ -52,7 +52,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/download-artifact@main
+      - uses: actions/download-artifact@v7
         with:
           merge-multiple: true
 
