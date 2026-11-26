@@ -1,0 +1,7 @@
+<Solution>
+	<Folder Name="/libraries/">
+		<Project Path="libraries/SimpleOTP/SimpleOTP.csproj" />
+		<Project Path="libraries/SimpleOTP.DependencyInjection/SimpleOTP.DependencyInjection.csproj" />
+	</Folder>
+	<Project Path="SimpleOTP.Tests/SimpleOTP.Tests.csproj" />
+</Solution>

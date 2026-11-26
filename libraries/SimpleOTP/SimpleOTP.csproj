@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+		<TargetFrameworks>net10.0;net11.0</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -15,7 +15,7 @@
 
 	<PropertyGroup>
 		<PackageId>EugeneFox.SimpleOTP</PackageId>
-		<Version>10.0.6.0</Version>
+		<Version>11.0.0.0</Version>
 		<Authors>Eugene Fox</Authors>
 		<Copyright>Copyright © Eugene Fox 2026</Copyright>
 		<NeutralLanguage>en-US</NeutralLanguage>
@@ -36,7 +36,8 @@
 			Feature-rich, fast, and customizable library for implementation TOTP/HOTP authenticators and validators.
 		</Description>
 		<PackageReleaseNotes>
-			- Fixed OTP config incorrect validation of TOTP period and code length.
+			- .NET 11 support
+			- Removed .NET 8 and .NET 9 support
 		</PackageReleaseNotes>
 	</PropertyGroup>
 
